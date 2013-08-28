@@ -1,0 +1,33 @@
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+    <ui:style>
+        .panel {
+            background-color: #808080;
+            width: 200px;
+            margin: 0 auto;
+            font-size: 40px;
+        }
+
+        .titleLabel{
+            text-align: center;
+            font-size: 50px;
+        }
+
+        .btn{
+            text-align: center;
+            margin-top:10px;
+        }
+
+        .labels{
+            font-size: 20px;
+        }
+    </ui:style>
+
+    <g:VerticalPanel styleName="{style.panel}">
+        <g:Label ui:field="titleLabel" text="Log In" styleName="{style.titleLabel}"/>
+        <g:Label ui:field="nameLabel" text="Username" styleName="{style.labels}"/>
+        <g:TextBox ui:field="nameBox"/>
+        <g:Label ui:field="passLabel" text="Password" styleName="{style.labels}"/>
+        <g:TextBox ui:field="passBox"/>
+        <g:Button ui:field="loginButton" text="Login" styleName="{style.btn}"/>
+    </g:VerticalPanel>
+</ui:UiBinder>
