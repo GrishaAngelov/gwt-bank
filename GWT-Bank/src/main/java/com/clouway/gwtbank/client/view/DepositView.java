@@ -14,10 +14,10 @@ import com.google.gwt.user.client.ui.*;
  */
 public class DepositView extends Composite implements View {
 
-    interface MyUiBinder extends UiBinder<Widget, DepositView> {
+    interface UserInterfaceBinder extends UiBinder<Widget, DepositView> {
     }
 
-    private static MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
+    private static UserInterfaceBinder uiBinder = GWT.create(UserInterfaceBinder.class);
     private Presenter presenter;
 
     public DepositView() {

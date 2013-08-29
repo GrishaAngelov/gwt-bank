@@ -14,10 +14,10 @@ import com.google.gwt.user.client.ui.*;
  */
 public class WithdrawView extends Composite implements View {
 
-    interface MyUiBinder extends UiBinder<Widget, WithdrawView> {
+    interface UserInterfaceBinder extends UiBinder<Widget, WithdrawView> {
     }
 
-    private static MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
+    private static UserInterfaceBinder uiBinder = GWT.create(UserInterfaceBinder.class);
     private Presenter presenter;
 
     public WithdrawView() {

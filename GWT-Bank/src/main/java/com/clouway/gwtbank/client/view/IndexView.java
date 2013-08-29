@@ -16,10 +16,10 @@ import com.google.gwt.user.client.ui.Widget;
  * @author Grisha Angelov <grisha.angelov@clouway.com>
  */
 public class IndexView extends Composite implements View {
-    interface MyUiBinder extends UiBinder<Widget, IndexView> {
+    interface UserInterfaceBinder extends UiBinder<Widget, IndexView> {
     }
 
-    private static MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
+    private static UserInterfaceBinder uiBinder = GWT.create(UserInterfaceBinder.class);
     private Presenter presenter;
 
     public IndexView() {

@@ -18,10 +18,10 @@ import com.google.gwt.user.client.ui.Widget;
  */
 public class MenuView extends Composite implements View {
 
-    interface MyUiBinder extends UiBinder<Widget, MenuView> {
+    interface UserInterfaceBinder extends UiBinder<Widget, MenuView> {
     }
 
-    private static MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
+    private static UserInterfaceBinder uiBinder = GWT.create(UserInterfaceBinder.class);
     private Presenter presenter;
 
     public MenuView() {
