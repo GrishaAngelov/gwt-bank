@@ -5,6 +5,16 @@
 
 <web-app>
 
+    <servlet>
+        <servlet-name>gwtRequest</servlet-name>
+        <servlet-class>com.google.web.bindery.requestfactory.server.RequestFactoryServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>gwtRequest</servlet-name>
+        <url-pattern>/gwtRequest</url-pattern>
+    </servlet-mapping>
+
 
   <!-- Default page to serve -->
   <welcome-file-list>

@@ -58,6 +58,11 @@ public class BankUserRepository implements UserRepository {
         });
     }
 
+    @Override
+    public User findBy(Long id) {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
     private boolean checkIsUsernameAvailable(ResultSet resultSet, String username) throws SQLException {
         boolean isAvailable = true;
         while (resultSet.next()) {

@@ -10,4 +10,6 @@ public interface UserRepository {
     boolean add(User user);
 
     boolean hasUser(User user);
+
+    User findBy(Long id);
 }

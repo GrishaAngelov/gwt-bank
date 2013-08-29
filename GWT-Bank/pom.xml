@@ -43,14 +43,6 @@
       <groupId>javax.validation</groupId>
       <artifactId>validation-api</artifactId>
       <version>1.0.0.GA</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>javax.validation</groupId>
-      <artifactId>validation-api</artifactId>
-      <version>1.0.0.GA</version>
-      <classifier>sources</classifier>
-      <scope>test</scope>
     </dependency>
 
 
@@ -114,6 +106,40 @@
           <!--<artifactId>servlet-api-2.5</artifactId>-->
           <!--<version>6.1.11</version>-->
       <!--</dependency>-->
+
+      <dependency>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-validator</artifactId>
+          <version>4.1.0.Final</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+          <version>1.5.3</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-log4j12</artifactId>
+          <version>1.5.3</version>
+      </dependency>
+
+      <dependency>
+          <groupId>com.google.web.bindery</groupId>
+          <artifactId>requestfactory-apt</artifactId>
+          <version>2.5.1</version>
+      </dependency>
+
+      <dependency>
+          <groupId>com.google.gwt</groupId>
+          <artifactId>gwt-user</artifactId>
+          <version>2.5.1</version>
+      </dependency>
+
+
+
+
 
   </dependencies>
 
