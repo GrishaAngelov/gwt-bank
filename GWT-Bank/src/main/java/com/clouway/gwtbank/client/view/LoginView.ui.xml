@@ -27,7 +27,7 @@
         <g:Label ui:field="nameLabel" text="Username" styleName="{style.labels}"/>
         <g:TextBox ui:field="nameBox"/>
         <g:Label ui:field="passLabel" text="Password" styleName="{style.labels}"/>
-        <g:TextBox ui:field="passBox"/>
+        <g:PasswordTextBox ui:field="passBox"/>
         <g:Button ui:field="loginButton" text="Login" styleName="{style.btn}"/>
     </g:VerticalPanel>
 </ui:UiBinder>

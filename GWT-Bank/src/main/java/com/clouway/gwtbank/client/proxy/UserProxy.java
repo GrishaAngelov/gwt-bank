@@ -6,11 +6,7 @@ import com.google.web.bindery.requestfactory.shared.EntityProxy;
 import com.google.web.bindery.requestfactory.shared.ProxyFor;
 
 /**
- * Created with IntelliJ IDEA.
- * User: clouway
- * Date: 8/29/13
- * Time: 2:14 PM
- * To change this template use File | Settings | File Templates.
+ * @author Grisha Angelov <grisha.angelov@clouway.com>
  */
 @ProxyFor(value = User.class, locator = UserLocator.class)
 public interface UserProxy extends EntityProxy {

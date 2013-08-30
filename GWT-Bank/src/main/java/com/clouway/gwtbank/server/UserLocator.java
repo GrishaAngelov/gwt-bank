@@ -3,11 +3,7 @@ package com.clouway.gwtbank.server;
 import com.google.web.bindery.requestfactory.shared.Locator;
 
 /**
- * Created with IntelliJ IDEA.
- * User: clouway
- * Date: 8/29/13
- * Time: 3:14 PM
- * To change this template use File | Settings | File Templates.
+ * @author Grisha Angelov <grisha.angelov@clouway.com>
  */
 public class UserLocator extends Locator<User,Long> {
     @Override
@@ -17,8 +13,8 @@ public class UserLocator extends Locator<User,Long> {
 
     @Override
     public User find(Class<? extends User> aClass, Long id) {
-        InMemoryUserDao inMemoryUserDao = new InMemoryUserDao();
-        return inMemoryUserDao.findBy(id);
+        InMemoryUserRepo inMemoryUserRepo = InMemoryUserRepo.getInstance();
+        return inMemoryUserRepo.findBy(id);
     }
 
     @Override

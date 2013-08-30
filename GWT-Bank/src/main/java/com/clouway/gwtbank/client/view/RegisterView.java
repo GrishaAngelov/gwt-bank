@@ -48,7 +48,7 @@ public class RegisterView extends Composite implements View {
     Label passLabel;
 
     @UiField
-    TextBox passBox;
+    PasswordTextBox passBox;
 
     @UiField
     Button registerButton;
@@ -58,6 +58,7 @@ public class RegisterView extends Composite implements View {
 
         UserRequestFactory.UserRequestContext context = createFactory().context();
         UserProxy userProxy = context.create(UserProxy.class);
+//        userProxy.setId(1L);
         userProxy.setUsername(nameBox.getText());
         userProxy.setPassword(passBox.getText());
 

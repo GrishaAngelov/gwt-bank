@@ -46,19 +46,23 @@ public class User {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof User)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
 
         User user = (User) o;
 
+        if (!id.equals(user.id)) return false;
         if (!password.equals(user.password)) return false;
         if (!username.equals(user.username)) return false;
+        if (!version.equals(user.version)) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = username.hashCode();
+        int result = id.hashCode();
+        result = 31 * result + version.hashCode();
+        result = 31 * result + username.hashCode();
         result = 31 * result + password.hashCode();
         return result;
     }
