@@ -20,8 +20,8 @@ public class AppActivityMapper implements ActivityMapper {
     public Activity getActivity(Place place) {
         if (place instanceof LoginPlace) {
             return new LoginActivity(new LoginView(), placeController);
-        } else if (place instanceof IndexPlace) {
-            return new IndexActivity(new IndexView(), placeController);
+        } else if (place instanceof InitialPlace) {
+            return new InitialActivity(new InitialView(), placeController);
         } else if (place instanceof RegisterPlace) {
             return new RegisterActivity(new RegisterView(), placeController);
         } else if (place instanceof MenuPlace) {

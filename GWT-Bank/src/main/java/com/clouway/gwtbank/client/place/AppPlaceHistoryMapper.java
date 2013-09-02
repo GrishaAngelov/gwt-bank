@@ -6,7 +6,7 @@ import com.google.gwt.place.shared.WithTokenizers;
 /**
  * @author Grisha Angelov <grisha.angelov@clouway.com>
  */
-@WithTokenizers({LoginPlace.Tokenizer.class, IndexPlace.Tokenizer.class,
+@WithTokenizers({LoginPlace.Tokenizer.class, InitialPlace.Tokenizer.class,
         RegisterPlace.Tokenizer.class, MenuPlace.Tokenizer.class, BalancePlace.Tokenizer.class, DepositPlace.Tokenizer.class, WithdrawPlace.Tokenizer.class})
 public interface AppPlaceHistoryMapper extends PlaceHistoryMapper {
 }

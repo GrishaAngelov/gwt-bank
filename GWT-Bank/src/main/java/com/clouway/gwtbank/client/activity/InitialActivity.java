@@ -1,6 +1,7 @@
 package com.clouway.gwtbank.client.activity;
 
-import com.clouway.gwtbank.client.view.IndexView;
+import com.clouway.gwtbank.client.view.InitialView;
+import com.clouway.gwtbank.client.view.InitialView;
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.Place;
@@ -10,19 +11,19 @@ import com.google.gwt.user.client.ui.AcceptsOneWidget;
 /**
  * @author Grisha Angelov <grisha.angelov@clouway.com>
  */
-public class IndexActivity extends AbstractActivity implements Presenter {
-    private IndexView indexView;
+public class InitialActivity extends AbstractActivity implements Presenter {
+    private InitialView initialView;
     private PlaceController placeController;
 
-    public IndexActivity(IndexView indexView, PlaceController placeController) {
-        this.indexView = indexView;
+    public InitialActivity(InitialView initialView, PlaceController placeController) {
+        this.initialView = initialView;
         this.placeController = placeController;
     }
 
     @Override
     public void start(AcceptsOneWidget container, EventBus eventBus) {
-        container.setWidget(indexView.asWidget());
-        indexView.setPresenter(this);
+        container.setWidget(initialView.asWidget());
+        initialView.setPresenter(this);
     }
 
     @Override
