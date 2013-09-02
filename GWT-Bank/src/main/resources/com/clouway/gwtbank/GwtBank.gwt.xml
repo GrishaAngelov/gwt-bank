@@ -6,6 +6,8 @@
     <inherits name="com.google.gwt.place.Place"/>
     <inherits name='com.google.gwt.user.theme.standard.Standard'/>
     <inherits name="com.google.web.bindery.requestfactory.RequestFactory"/>
+    <inherits name="javax.validation.Validation"/>
+
     <!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
     <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
     <entry-point class='com.clouway.gwtbank.client.GwtBank'/>

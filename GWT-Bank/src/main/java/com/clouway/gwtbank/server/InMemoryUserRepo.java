@@ -7,16 +7,6 @@ import java.util.Map;
  * @author Grisha Angelov <grisha.angelov@clouway.com>
  */
 public class InMemoryUserRepo implements UserRepository {
-    private static  InMemoryUserRepo instance = new InMemoryUserRepo();
-
-    private InMemoryUserRepo() {
-
-    }
-
-    public static InMemoryUserRepo getInstance(){
-        return instance;
-    }
-
     private Map<Long, User> users = new HashMap<Long, User>();
     private Long id = 1L;
 
