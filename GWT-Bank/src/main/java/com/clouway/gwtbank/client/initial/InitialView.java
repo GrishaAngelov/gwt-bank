@@ -1,10 +1,10 @@
 package com.clouway.gwtbank.client.initial;
 
-import com.clouway.gwtbank.client.View;
 import com.clouway.gwtbank.client.login.LoginPlace;
 import com.clouway.gwtbank.client.register.RegisterPlace;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.place.shared.Place;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
@@ -15,7 +15,10 @@ import com.google.gwt.user.client.ui.Widget;
 /**
  * @author Grisha Angelov <grisha.angelov@clouway.com>
  */
-public class InitialView extends Composite implements View {
+public class InitialView extends Composite{
+    interface Presenter{
+        void goToPlace(Place place);
+    }
     interface UserInterfaceBinder extends UiBinder<Widget, InitialView> {
     }
 
@@ -26,7 +29,6 @@ public class InitialView extends Composite implements View {
         initWidget(uiBinder.createAndBindUi(this));
     }
 
-    @Override
     public void setPresenter(Presenter presenter) {
         this.presenter = presenter;
     }

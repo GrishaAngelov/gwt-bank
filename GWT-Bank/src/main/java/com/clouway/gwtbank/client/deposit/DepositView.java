@@ -1,9 +1,9 @@
 package com.clouway.gwtbank.client.deposit;
 
-import com.clouway.gwtbank.client.View;
 import com.clouway.gwtbank.client.menu.MenuPlace;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.place.shared.Place;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
@@ -12,8 +12,11 @@ import com.google.gwt.user.client.ui.*;
 /**
  * @author Grisha Angelov <grisha.angelov@clouway.com>
  */
-public class DepositView extends Composite implements View {
+public class DepositView extends Composite {
 
+    interface Presenter{
+        void goToPlace(Place place);
+    }
     interface UserInterfaceBinder extends UiBinder<Widget, DepositView> {
     }
 
@@ -24,7 +27,6 @@ public class DepositView extends Composite implements View {
         initWidget(uiBinder.createAndBindUi(this));
     }
 
-    @Override
     public void setPresenter(Presenter presenter) {
         this.presenter = presenter;
     }

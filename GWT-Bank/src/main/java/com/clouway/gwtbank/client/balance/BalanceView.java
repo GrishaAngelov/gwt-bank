@@ -1,9 +1,9 @@
 package com.clouway.gwtbank.client.balance;
 
-import com.clouway.gwtbank.client.View;
 import com.clouway.gwtbank.client.menu.MenuPlace;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.place.shared.Place;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
@@ -15,7 +15,10 @@ import com.google.gwt.user.client.ui.Widget;
 /**
  * @author Grisha Angelov <grisha.angelov@clouway.com>
  */
-public class BalanceView extends Composite implements View {
+public class BalanceView extends Composite {
+    interface Presenter {
+        void goToPlace(Place place);
+    }
 
     interface UserInterfaceBinder extends UiBinder<Widget, BalanceView> {
     }
@@ -23,9 +26,8 @@ public class BalanceView extends Composite implements View {
     private static UserInterfaceBinder uiBinder = GWT.create(UserInterfaceBinder.class);
     private Presenter presenter;
 
-    @Override
     public void setPresenter(Presenter presenter) {
-       this.presenter = presenter;
+        this.presenter = presenter;
     }
 
     public BalanceView() {
@@ -42,7 +44,7 @@ public class BalanceView extends Composite implements View {
     Anchor goBackLink;
 
     @UiHandler("goBackLink")
-    void onGoBackLinkClick(ClickEvent event){
+    void onGoBackLinkClick(ClickEvent event) {
         presenter.goToPlace(new MenuPlace("Menu"));
     }
 

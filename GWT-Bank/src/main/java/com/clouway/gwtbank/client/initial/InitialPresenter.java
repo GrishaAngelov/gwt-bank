@@ -1,6 +1,6 @@
 package com.clouway.gwtbank.client.initial;
 
-import com.clouway.gwtbank.client.View.Presenter;
+import com.clouway.gwtbank.client.initial.InitialView.Presenter;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceController;
 

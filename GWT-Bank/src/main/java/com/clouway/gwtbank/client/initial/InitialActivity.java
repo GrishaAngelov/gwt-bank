@@ -1,6 +1,6 @@
 package com.clouway.gwtbank.client.initial;
 
-import com.clouway.gwtbank.client.View.Presenter;
+import com.clouway.gwtbank.client.initial.InitialView.Presenter;
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;

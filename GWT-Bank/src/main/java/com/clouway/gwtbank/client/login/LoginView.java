@@ -1,24 +1,22 @@
 package com.clouway.gwtbank.client.login;
 
-import com.clouway.gwtbank.client.View;
-import com.clouway.gwtbank.client.menu.MenuPlace;
-import com.clouway.gwtbank.shared.UserProxy;
-import com.clouway.gwtbank.shared.UserRequestFactory;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.shared.SimpleEventBus;
+import com.google.gwt.place.shared.Place;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.*;
-import com.google.web.bindery.requestfactory.shared.Receiver;
-import com.google.web.bindery.requestfactory.shared.ServerFailure;
 
 /**
  * @author Grisha Angelov <grisha.angelov@clouway.com>
  */
-public class LoginView extends Composite implements View {
+public class LoginView extends Composite {
+    interface Presenter {
+        void goToPlace(Place place);
+
+        void login(String username, String password);
+    }
 
     interface UserInterfaceBinder extends UiBinder<Widget, LoginView> {
     }
@@ -33,7 +31,6 @@ public class LoginView extends Composite implements View {
     @UiField
     Label titleLabel;
 
-    @Override
     public void setPresenter(Presenter presenter) {
         this.presenter = presenter;
     }
@@ -55,29 +52,6 @@ public class LoginView extends Composite implements View {
 
     @UiHandler("loginButton")
     void onLoginButtonClick(ClickEvent event) {
-        UserRequestFactory factory = GWT.create(UserRequestFactory.class);
-        factory.initialize(new SimpleEventBus());
-        UserRequestFactory.UserRequestContext context  = factory.context();
-        UserProxy userProxy = context.create(UserProxy.class);
-//        userProxy.setId(1L);
-        userProxy.setUsername(nameBox.getText());
-        userProxy.setPassword(passBox.getText());
-        context.hasUser(userProxy).fire(new Receiver<Boolean>() {
-            @Override
-            public void onSuccess(Boolean result) {
-                if(result){
-                presenter.goToPlace(new MenuPlace("Menu"));
-                }else{
-                    Window.alert("Incorrect username and/or password");
-                }
-            }
-
-            @Override
-            public void onFailure(ServerFailure error) {
-                Window.alert("Incorrect username and/or password");
-            }
-        });
-
-
+        presenter.login(nameBox.getText(), passBox.getText());
     }
 }

@@ -1,6 +1,6 @@
 package com.clouway.gwtbank.client.balance;
 
-import com.clouway.gwtbank.client.View.Presenter;
+import com.clouway.gwtbank.client.balance.BalanceView.Presenter;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceController;
 

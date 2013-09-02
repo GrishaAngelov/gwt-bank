@@ -1,7 +1,7 @@
 package com.clouway.gwtbank.client.withdraw;
 
 
-import com.clouway.gwtbank.client.View.Presenter;
+import com.clouway.gwtbank.client.withdraw.WithdrawView.Presenter;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceController;
 
