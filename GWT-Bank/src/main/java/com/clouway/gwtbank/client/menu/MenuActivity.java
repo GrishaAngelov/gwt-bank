@@ -1,33 +1,26 @@
 package com.clouway.gwtbank.client.menu;
 
-import com.clouway.gwtbank.client.Presenter;
+import com.clouway.gwtbank.client.View.Presenter;
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.event.shared.EventBus;
-import com.google.gwt.place.shared.Place;
-import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 
 /**
  * @author Grisha Angelov <grisha.angelov@clouway.com>
  */
-public class MenuActivity extends AbstractActivity implements Presenter {
+public class MenuActivity extends AbstractActivity {
     private MenuView menuView;
-    private PlaceController placeController;
+    private Presenter menuPresenter;
 
-    public MenuActivity(MenuView menuView, PlaceController placeController) {
+
+    public MenuActivity(MenuView menuView, Presenter menuPresenter) {
         this.menuView = menuView;
-        this.placeController = placeController;
+        this.menuPresenter = menuPresenter;
     }
 
     @Override
     public void start(AcceptsOneWidget container, EventBus eventBus) {
         container.setWidget(menuView.asWidget());
-        menuView.setPresenter(this);
+        menuView.setPresenter(menuPresenter);
     }
-
-    @Override
-    public void goToPlace(Place place) {
-        placeController.goTo(place);
-    }
-
 }

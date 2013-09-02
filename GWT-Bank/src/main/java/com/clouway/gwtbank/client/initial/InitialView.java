@@ -1,6 +1,5 @@
 package com.clouway.gwtbank.client.initial;
 
-import com.clouway.gwtbank.client.Presenter;
 import com.clouway.gwtbank.client.View;
 import com.clouway.gwtbank.client.login.LoginPlace;
 import com.clouway.gwtbank.client.register.RegisterPlace;

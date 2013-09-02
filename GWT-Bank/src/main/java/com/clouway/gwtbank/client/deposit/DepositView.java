@@ -1,6 +1,5 @@
 package com.clouway.gwtbank.client.deposit;
 
-import com.clouway.gwtbank.client.Presenter;
 import com.clouway.gwtbank.client.View;
 import com.clouway.gwtbank.client.menu.MenuPlace;
 import com.google.gwt.core.client.GWT;

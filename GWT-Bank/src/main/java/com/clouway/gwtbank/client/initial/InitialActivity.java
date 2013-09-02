@@ -1,32 +1,26 @@
 package com.clouway.gwtbank.client.initial;
 
-import com.clouway.gwtbank.client.Presenter;
+import com.clouway.gwtbank.client.View.Presenter;
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.event.shared.EventBus;
-import com.google.gwt.place.shared.Place;
-import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 
 /**
  * @author Grisha Angelov <grisha.angelov@clouway.com>
  */
-public class InitialActivity extends AbstractActivity implements Presenter {
+public class InitialActivity extends AbstractActivity {
     private InitialView initialView;
-    private PlaceController placeController;
+    private Presenter initialPresenter;
 
-    public InitialActivity(InitialView initialView, PlaceController placeController) {
+
+    public InitialActivity(InitialView initialView, Presenter initialPresenter) {
         this.initialView = initialView;
-        this.placeController = placeController;
+        this.initialPresenter = initialPresenter;
     }
 
     @Override
     public void start(AcceptsOneWidget container, EventBus eventBus) {
         container.setWidget(initialView.asWidget());
-        initialView.setPresenter(this);
-    }
-
-    @Override
-    public void goToPlace(Place place) {
-        placeController.goTo(place);
+        initialView.setPresenter(initialPresenter);
     }
 }
