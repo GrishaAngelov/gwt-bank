@@ -1,4 +1,4 @@
-package com.clouway.gwtbank.client.proxy;
+package com.clouway.gwtbank.shared;
 
 import com.clouway.gwtbank.server.User;
 import com.clouway.gwtbank.server.UserLocator;

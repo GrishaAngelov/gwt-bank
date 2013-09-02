@@ -1,9 +1,9 @@
 package com.clouway.gwtbank.client.view;
 
-import com.clouway.gwtbank.client.UserRequestFactory;
+import com.clouway.gwtbank.shared.UserRequestFactory;
 import com.clouway.gwtbank.client.activity.Presenter;
 import com.clouway.gwtbank.client.place.MenuPlace;
-import com.clouway.gwtbank.client.proxy.UserProxy;
+import com.clouway.gwtbank.shared.UserProxy;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.shared.SimpleEventBus;

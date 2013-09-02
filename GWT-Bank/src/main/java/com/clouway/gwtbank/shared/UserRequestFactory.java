@@ -1,6 +1,6 @@
-package com.clouway.gwtbank.client;
+package com.clouway.gwtbank.shared;
 
-import com.clouway.gwtbank.client.proxy.UserProxy;
+import com.clouway.gwtbank.shared.UserProxy;
 import com.clouway.gwtbank.server.InMemoryUserRepo;
 import com.clouway.gwtbank.server.InMemoryUserRepoLocator;
 import com.google.web.bindery.requestfactory.shared.Request;
