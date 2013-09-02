@@ -1,4 +1,4 @@
-package com.clouway.gwtbank.client.activity;
+package com.clouway.gwtbank.client;
 
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.user.client.ui.HasWidgets;

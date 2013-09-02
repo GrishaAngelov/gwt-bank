@@ -1,4 +1,4 @@
-package com.clouway.gwtbank.client.place;
+package com.clouway.gwtbank.client.balance;
 
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceTokenizer;

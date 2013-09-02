@@ -1,5 +1,12 @@
-package com.clouway.gwtbank.client.place;
+package com.clouway.gwtbank.client;
 
+import com.clouway.gwtbank.client.balance.BalancePlace;
+import com.clouway.gwtbank.client.deposit.DepositPlace;
+import com.clouway.gwtbank.client.initial.InitialPlace;
+import com.clouway.gwtbank.client.login.LoginPlace;
+import com.clouway.gwtbank.client.menu.MenuPlace;
+import com.clouway.gwtbank.client.register.RegisterPlace;
+import com.clouway.gwtbank.client.withdraw.WithdrawPlace;
 import com.google.gwt.place.shared.PlaceHistoryMapper;
 import com.google.gwt.place.shared.WithTokenizers;
 

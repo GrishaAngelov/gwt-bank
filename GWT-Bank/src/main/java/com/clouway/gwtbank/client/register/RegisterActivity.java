@@ -1,7 +1,6 @@
-package com.clouway.gwtbank.client.activity;
+package com.clouway.gwtbank.client.register;
 
-import com.clouway.gwtbank.client.view.DepositView;
-import com.clouway.gwtbank.client.view.WithdrawView;
+import com.clouway.gwtbank.client.Presenter;
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.Place;
@@ -11,19 +10,19 @@ import com.google.gwt.user.client.ui.AcceptsOneWidget;
 /**
  * @author Grisha Angelov <grisha.angelov@clouway.com>
  */
-public class WithdrawActivity extends AbstractActivity implements Presenter {
+public class RegisterActivity extends AbstractActivity implements Presenter {
+    private RegisterView registerView;
     private PlaceController placeController;
-    private WithdrawView withdrawView;
 
-    public WithdrawActivity(WithdrawView withdrawView, PlaceController placeController) {
-        this.withdrawView = withdrawView;
+    public RegisterActivity(RegisterView registerView, PlaceController placeController) {
+        this.registerView = registerView;
         this.placeController = placeController;
     }
 
     @Override
     public void start(AcceptsOneWidget container, EventBus eventBus) {
-        container.setWidget(withdrawView.asWidget());
-        withdrawView.setPresenter(this);
+        container.setWidget(registerView.asWidget());
+        registerView.setPresenter(this);
     }
 
     @Override

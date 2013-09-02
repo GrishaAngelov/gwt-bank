@@ -1,6 +1,6 @@
-package com.clouway.gwtbank.client.view;
+package com.clouway.gwtbank.client;
 
-import com.clouway.gwtbank.client.activity.Presenter;
+import com.clouway.gwtbank.client.Presenter;
 
 /**
  * @author Grisha Angelov <grisha.angelov@clouway.com>

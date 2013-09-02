@@ -1,8 +1,9 @@
-package com.clouway.gwtbank.client.view;
+package com.clouway.gwtbank.client.register;
 
+import com.clouway.gwtbank.client.View;
 import com.clouway.gwtbank.shared.UserRequestFactory;
-import com.clouway.gwtbank.client.activity.Presenter;
-import com.clouway.gwtbank.client.place.LoginPlace;
+import com.clouway.gwtbank.client.Presenter;
+import com.clouway.gwtbank.client.login.LoginPlace;
 import com.clouway.gwtbank.shared.UserProxy;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;

@@ -1,9 +1,10 @@
-package com.clouway.gwtbank.client.view;
+package com.clouway.gwtbank.client.menu;
 
-import com.clouway.gwtbank.client.activity.Presenter;
-import com.clouway.gwtbank.client.place.BalancePlace;
-import com.clouway.gwtbank.client.place.DepositPlace;
-import com.clouway.gwtbank.client.place.WithdrawPlace;
+import com.clouway.gwtbank.client.Presenter;
+import com.clouway.gwtbank.client.View;
+import com.clouway.gwtbank.client.balance.BalancePlace;
+import com.clouway.gwtbank.client.deposit.DepositPlace;
+import com.clouway.gwtbank.client.withdraw.WithdrawPlace;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;

@@ -1,8 +1,6 @@
 package com.clouway.gwtbank.client;
 
-import com.clouway.gwtbank.client.activity.AppActivityMapper;
-import com.clouway.gwtbank.client.place.AppPlaceHistoryMapper;
-import com.clouway.gwtbank.client.place.InitialPlace;
+import com.clouway.gwtbank.client.initial.InitialPlace;
 import com.google.gwt.activity.shared.ActivityManager;
 import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.core.client.EntryPoint;

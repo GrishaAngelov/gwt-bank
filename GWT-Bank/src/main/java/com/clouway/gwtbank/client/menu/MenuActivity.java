@@ -1,6 +1,6 @@
-package com.clouway.gwtbank.client.activity;
+package com.clouway.gwtbank.client.menu;
 
-import com.clouway.gwtbank.client.view.MenuView;
+import com.clouway.gwtbank.client.Presenter;
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.Place;
