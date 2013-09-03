@@ -1,6 +1,7 @@
 package com.clouway.gwtbank.client;
 
 import com.clouway.gwtbank.client.initial.InitialPlace;
+import com.clouway.gwtbank.shared.UserRequestFactory;
 import com.google.gwt.activity.shared.ActivityManager;
 import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.core.client.EntryPoint;
@@ -25,7 +26,11 @@ public class GwtBank implements EntryPoint {
         RootPanel.get().getElement().getStyle().setBackgroundColor("#808080");
         EventBus eventBus = new SimpleEventBus();
         PlaceController placeController = new PlaceController(eventBus);
-        ActivityMapper activityMapper = new AppActivityMapper(placeController);
+
+        UserRequestFactory userRequestFactory = GWT.create(UserRequestFactory.class);
+        userRequestFactory.initialize(eventBus);
+
+        ActivityMapper activityMapper = new AppActivityMapper(placeController, userRequestFactory);
         ActivityManager activityManager = new ActivityManager(activityMapper, eventBus);
         activityManager.setDisplay(simplePanel);
 

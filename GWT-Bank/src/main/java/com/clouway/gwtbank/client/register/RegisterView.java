@@ -1,57 +1,68 @@
 package com.clouway.gwtbank.client.register;
 
+import com.clouway.gwtbank.client.editor.UserEditor;
+import com.clouway.gwtbank.shared.UserProxy;
+import com.clouway.gwtbank.shared.UserRequestFactory;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
-import com.google.gwt.user.client.ui.*;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.Widget;
+import com.google.web.bindery.requestfactory.gwt.client.RequestFactoryEditorDriver;
 
 /**
  * @author Grisha Angelov <grisha.angelov@clouway.com>
  */
 public class RegisterView extends Composite {
-    interface Presenter {
+    public interface Presenter {
+
         void goToPlace(Place place);
-        void register(String username,String password);
+
+        void register(String username, String password);
     }
 
     interface UserInterfaceBinder extends UiBinder<Widget, RegisterView> {
+
     }
 
-    private static UserInterfaceBinder uiBinder = GWT.create(UserInterfaceBinder.class);
-    private Presenter presenter;
+    interface Driver extends RequestFactoryEditorDriver<UserProxy, UserEditor> {
+    }
 
-    public RegisterView() {
+    private Driver driver = GWT.create(Driver.class);
+    private static UserInterfaceBinder uiBinder = GWT.create(UserInterfaceBinder.class);
+
+    private Presenter presenter;
+    private UserProxy userProxy;
+
+    @UiField
+    UserEditor userEditor;
+
+    @UiField
+    Button registerButton;
+
+    public RegisterView(UserRequestFactory userRequestFactory) {
         initWidget(uiBinder.createAndBindUi(this));
+
+        driver.initialize(userEditor);
+
+        UserRequestFactory.UserRequestContext userRequestContext = userRequestFactory.context();
+
+        userProxy = userRequestContext.create(UserProxy.class);
+
+        driver.edit(userProxy, userRequestContext);
     }
 
     public void setPresenter(Presenter presenter) {
         this.presenter = presenter;
     }
 
-    @UiField
-    Label titleLabel;
-
-    @UiField
-    Label nameLabel;
-
-    @UiField
-    TextBox nameBox;
-
-    @UiField
-    Label passLabel;
-
-    @UiField
-    PasswordTextBox passBox;
-
-    @UiField
-    Button registerButton;
-
     @UiHandler("registerButton")
     void onRegisterButtonClick(ClickEvent event) {
-        presenter.register(nameBox.getText(), passBox.getText());
+        driver.flush();
+        presenter.register(userProxy.getUsername(), userProxy.getPassword());
     }
-
 }
