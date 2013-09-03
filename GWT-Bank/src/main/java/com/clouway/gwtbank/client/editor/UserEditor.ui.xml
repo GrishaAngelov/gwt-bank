@@ -1,0 +1,13 @@
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+    <ui:style>
+        .label{
+           font-size: 20px;
+        }
+    </ui:style>
+    <g:VerticalPanel>
+        <g:Label ui:field="nameLabel" text="Name" styleName="{style.label}"/>
+        <g:TextBox ui:field="username"/>
+        <g:Label ui:field="passwordLabel" text="Password" styleName="{style.label}"/>
+        <g:PasswordTextBox ui:field="password"/>
+    </g:VerticalPanel>
+</ui:UiBinder>
