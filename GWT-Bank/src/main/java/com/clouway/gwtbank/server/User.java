@@ -1,5 +1,7 @@
 package com.clouway.gwtbank.server;
 
+import com.clouway.gwtbank.validation.CheckNotStartWithDigit;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -13,6 +15,7 @@ public class User {
 
     @NotNull
     @Size(min = 4, message = "Username must be at least 4 symbols")
+    @CheckNotStartWithDigit(message = "Username must not start with digit")
     private String username;
 
     @NotNull

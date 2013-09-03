@@ -5,7 +5,7 @@ package com.clouway.gwtbank.server;
  */
 public class UserValidator implements Validator<User> {
 
-  public boolean isValid(User user) {
-    return !user.getUsername().equals("") && !user.getPassword().equals("");
-  }
+    public boolean isValid(User user) {
+        return !user.getUsername().equals("") && !user.getPassword().equals("");
+    }
 }
