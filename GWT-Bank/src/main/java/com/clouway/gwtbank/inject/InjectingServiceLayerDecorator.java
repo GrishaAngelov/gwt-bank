@@ -14,12 +14,12 @@ import java.util.Set;
  * @author Grisha Angelov <grisha.angelov@clouway.com>
  */
 public class InjectingServiceLayerDecorator extends ServiceLayerDecorator {
-//    private Validator validator;
+    private Validator validator;
     private Injector injector;
 
     @Inject
-    public InjectingServiceLayerDecorator(Injector injector) {
-//        this.validator = validator;
+    public InjectingServiceLayerDecorator(Injector injector,Validator validator) {
+        this.validator = validator;
         this.injector = injector;
     }
 
@@ -33,8 +33,8 @@ public class InjectingServiceLayerDecorator extends ServiceLayerDecorator {
         return injector.getInstance(resolveServiceClass(requestContext));
     }
 
-//    @Override
-//    public <T> Set<ConstraintViolation<T>> validate(T domainObject) {
-//        return validator.validate(domainObject);
-//    }
+    @Override
+    public <T> Set<ConstraintViolation<T>> validate(T domainObject) {
+        return validator.validate(domainObject);
+    }
 }

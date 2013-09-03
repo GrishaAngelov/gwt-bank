@@ -1,13 +1,22 @@
 package com.clouway.gwtbank.server;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 /**
  * @author Grisha Angelov <grisha.angelov@clouway.com>
  */
 public class User {
+
     private Long id;
     private Long version = 1L;
 
+    @NotNull
+    @Size(min = 4, message = "Username must be at least 4 symbols")
     private String username;
+
+    @NotNull
+    @Size(min = 4, message = "Password must be at least 4 symbols")
     private String password;
 
 
@@ -56,14 +65,5 @@ public class User {
         if (!version.equals(user.version)) return false;
 
         return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id.hashCode();
-        result = 31 * result + version.hashCode();
-        result = 31 * result + username.hashCode();
-        result = 31 * result + password.hashCode();
-        return result;
     }
 }

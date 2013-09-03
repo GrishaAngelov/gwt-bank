@@ -11,6 +11,9 @@ import com.google.web.bindery.event.shared.SimpleEventBus;
 import com.google.web.bindery.requestfactory.shared.Receiver;
 import com.google.web.bindery.requestfactory.shared.ServerFailure;
 
+import javax.validation.ConstraintViolation;
+import java.util.Set;
+
 /**
  * @author Grisha Angelov <grisha.angelov@clouway.com>
  */
@@ -43,6 +46,13 @@ public class RegisterPresenter implements RegisterView.Presenter {
             @Override
             public void onFailure(ServerFailure error) {
                 Window.alert("Not registered");
+            }
+
+            @Override
+            public void onConstraintViolation(Set<ConstraintViolation<?>> violations) {
+                for (ConstraintViolation<?> violation : violations) {
+                    Window.alert(violation.getMessage());
+                }
             }
         });
 
