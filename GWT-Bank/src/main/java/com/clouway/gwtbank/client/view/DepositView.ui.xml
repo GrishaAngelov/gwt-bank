@@ -1,0 +1,33 @@
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+    <ui:style>
+        .panel {
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        .label {
+            font-size: 30px;
+        }
+
+        .btn{
+            margin-top: 10px;
+        }
+
+        .a{
+            font-size: 20px;
+        }
+        a:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+
+    </ui:style>
+    <g:HTMLPanel styleName="{style.panel}">
+        <g:Label ui:field="titleLabel" text="Deposit" styleName="{style.label}"/>
+        <g:TextBox ui:field="depositBox"/>
+        <br/>
+        <g:Button ui:field="depositButton" text="Deposit" styleName="{style.btn}"/> <br/>
+        <g:Anchor ui:field="goBackLink" text="Go back" styleName="{style.a}"/>
+    </g:HTMLPanel>
+</ui:UiBinder>

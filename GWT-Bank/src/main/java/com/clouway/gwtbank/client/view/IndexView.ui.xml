@@ -1,0 +1,23 @@
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+    <ui:style>
+        .panel {
+            width: 200px;
+            margin: 0 auto;
+            font-size: 40px;
+            padding-top: 30px;
+            font-size: 20px;
+        }
+
+        .a:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+    </ui:style>
+
+
+    <g:HTMLPanel styleName="{style.panel}">
+        <g:Anchor ui:field="registerLink" text="Register" styleName="{style.a}"/>
+        <g:Anchor ui:field="loginLink" text="Login" styleName="{style.a}"/>
+    </g:HTMLPanel>
+</ui:UiBinder>
