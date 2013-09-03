@@ -17,10 +17,10 @@ import com.google.gwt.user.client.ui.Widget;
  */
 public class BalanceView extends Composite implements View {
 
-    interface MyUiBinder extends UiBinder<Widget, BalanceView> {
+    interface UserInterfaceBinder extends UiBinder<Widget, BalanceView> {
     }
 
-    private static MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
+    private static UserInterfaceBinder uiBinder = GWT.create(UserInterfaceBinder.class);
     private Presenter presenter;
 
     @Override

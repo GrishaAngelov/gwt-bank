@@ -14,9 +14,9 @@ import com.google.gwt.user.client.ui.*;
  */
 public class LoginView extends Composite implements View {
 
-    interface MyUiBinder extends UiBinder<Widget,LoginView>{}
+    interface UserInterfaceBinder extends UiBinder<Widget,LoginView>{}
 
-    private static MyUiBinder uiBinder = GWT.create(MyUiBinder.class);
+    private static UserInterfaceBinder uiBinder = GWT.create(UserInterfaceBinder.class);
     private Presenter presenter;
 
     public LoginView() {
