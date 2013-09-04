@@ -10,7 +10,7 @@ import com.google.web.bindery.requestfactory.shared.Service;
 /**
  * @author Grisha Angelov <grisha.angelov@clouway.com>
  */
-public interface UserRequestFactory extends RequestFactory {
+public interface BankRequestFactory extends RequestFactory {
 
 @Service(value = InMemoryUserRepo.class, locator = InjectingServiceLocator.class)
     public interface UserRequestContext extends RequestContext {

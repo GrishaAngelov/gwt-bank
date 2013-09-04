@@ -1,8 +1,8 @@
 package com.clouway.gwtbank.client.login;
 
 import com.clouway.gwtbank.client.editor.UserEditor;
+import com.clouway.gwtbank.shared.BankRequestFactory;
 import com.clouway.gwtbank.shared.UserProxy;
-import com.clouway.gwtbank.shared.UserRequestFactory;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.place.shared.Place;
@@ -33,10 +33,10 @@ public class LoginView extends Composite {
     private Driver driver = GWT.create(Driver.class);
     private UserProxy userProxy;
 
-    public LoginView(UserRequestFactory userRequestFactory) {
+    public LoginView(BankRequestFactory bankRequestFactory) {
         initWidget(uiBinder.createAndBindUi(this));
         driver.initialize(userEditor);
-        UserRequestFactory.UserRequestContext userRequestContext = userRequestFactory.context();
+        BankRequestFactory.UserRequestContext userRequestContext = bankRequestFactory.context();
         userProxy = userRequestContext.create(UserProxy.class);
         driver.edit(userProxy, userRequestContext);
     }

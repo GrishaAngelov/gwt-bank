@@ -1,7 +1,7 @@
 package com.clouway.gwtbank.client;
 
 import com.clouway.gwtbank.client.initial.InitialPlace;
-import com.clouway.gwtbank.shared.UserRequestFactory;
+import com.clouway.gwtbank.shared.BankRequestFactory;
 import com.google.gwt.activity.shared.ActivityManager;
 import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.core.client.EntryPoint;
@@ -27,10 +27,10 @@ public class GwtBank implements EntryPoint {
         EventBus eventBus = new SimpleEventBus();
         PlaceController placeController = new PlaceController(eventBus);
 
-        UserRequestFactory userRequestFactory = GWT.create(UserRequestFactory.class);
-        userRequestFactory.initialize(eventBus);
+        BankRequestFactory bankRequestFactory = GWT.create(BankRequestFactory.class);
+        bankRequestFactory.initialize(eventBus);
 
-        ActivityMapper activityMapper = new AppActivityMapper(placeController, userRequestFactory);
+        ActivityMapper activityMapper = new AppActivityMapper(placeController, bankRequestFactory);
         ActivityManager activityManager = new ActivityManager(activityMapper, eventBus);
         activityManager.setDisplay(simplePanel);
 
