@@ -2,8 +2,8 @@ package com.clouway.gwtbank.client.login;
 
 import com.clouway.gwtbank.client.login.LoginView.Presenter;
 import com.clouway.gwtbank.client.menu.MenuPlace;
+import com.clouway.gwtbank.shared.BankRequestFactory;
 import com.clouway.gwtbank.shared.UserProxy;
-import com.clouway.gwtbank.shared.UserRequestFactory;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.shared.SimpleEventBus;
 import com.google.gwt.place.shared.Place;
@@ -29,9 +29,9 @@ public class LoginPresenter implements Presenter {
 
     @Override
     public void login(String username,String password) {
-        UserRequestFactory factory = GWT.create(UserRequestFactory.class);
+        BankRequestFactory factory = GWT.create(BankRequestFactory.class);
         factory.initialize(new SimpleEventBus());
-        UserRequestFactory.UserRequestContext context  = factory.context();
+        BankRequestFactory.UserRequestContext context  = factory.context();
         UserProxy userProxy = context.create(UserProxy.class);
         userProxy.setUsername(username);
         userProxy.setPassword(password);

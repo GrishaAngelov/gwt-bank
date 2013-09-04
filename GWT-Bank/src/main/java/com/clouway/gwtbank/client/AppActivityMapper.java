@@ -28,7 +28,7 @@ import com.clouway.gwtbank.client.withdraw.WithdrawActivity;
 import com.clouway.gwtbank.client.withdraw.WithdrawPlace;
 import com.clouway.gwtbank.client.withdraw.WithdrawPresenter;
 import com.clouway.gwtbank.client.withdraw.WithdrawView;
-import com.clouway.gwtbank.shared.UserRequestFactory;
+import com.clouway.gwtbank.shared.BankRequestFactory;
 import com.google.gwt.activity.shared.Activity;
 import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.place.shared.Place;
@@ -39,20 +39,20 @@ import com.google.gwt.place.shared.PlaceController;
  */
 public class AppActivityMapper implements ActivityMapper {
     private PlaceController placeController;
-    private UserRequestFactory userRequestFactory;
+    private BankRequestFactory bankRequestFactory;
 
-    public AppActivityMapper(PlaceController placeController, UserRequestFactory userRequestFactory) {
+    public AppActivityMapper(PlaceController placeController, BankRequestFactory bankRequestFactory) {
         this.placeController = placeController;
-        this.userRequestFactory = userRequestFactory;
+        this.bankRequestFactory = bankRequestFactory;
     }
 
     public Activity getActivity(Place place) {
         if (place instanceof LoginPlace) {
-            return new LoginActivity(new LoginView(userRequestFactory), new LoginPresenter(placeController));
+            return new LoginActivity(new LoginView(bankRequestFactory), new LoginPresenter(placeController));
         } else if (place instanceof InitialPlace) {
             return new InitialActivity(new InitialView(), new InitialPresenter(placeController));
         } else if (place instanceof RegisterPlace) {
-            return new RegisterActivity(new RegisterView(userRequestFactory), new RegisterPresenter(placeController));
+            return new RegisterActivity(new RegisterView(bankRequestFactory), new RegisterPresenter(placeController));
         } else if (place instanceof MenuPlace) {
             return new MenuActivity(new MenuView(), new MenuPresenter(placeController));
         } else if (place instanceof BalancePlace) {

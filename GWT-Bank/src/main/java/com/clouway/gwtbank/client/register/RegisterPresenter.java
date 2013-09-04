@@ -1,8 +1,8 @@
 package com.clouway.gwtbank.client.register;
 
 import com.clouway.gwtbank.client.login.LoginPlace;
+import com.clouway.gwtbank.shared.BankRequestFactory;
 import com.clouway.gwtbank.shared.UserProxy;
-import com.clouway.gwtbank.shared.UserRequestFactory;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceController;
@@ -32,7 +32,7 @@ public class RegisterPresenter implements RegisterView.Presenter {
     @Override
     public void register(String username, String password) {
 
-        UserRequestFactory.UserRequestContext context = createFactory().context();
+        BankRequestFactory.UserRequestContext context = createFactory().context();
         UserProxy userProxy = context.create(UserProxy.class);
         userProxy.setUsername(username);
         userProxy.setPassword(password);
@@ -58,8 +58,8 @@ public class RegisterPresenter implements RegisterView.Presenter {
 
     }
 
-    private UserRequestFactory createFactory() {
-        UserRequestFactory factory = GWT.create(UserRequestFactory.class);
+    private BankRequestFactory createFactory() {
+        BankRequestFactory factory = GWT.create(BankRequestFactory.class);
         factory.initialize(new SimpleEventBus());
         return factory;
     }
